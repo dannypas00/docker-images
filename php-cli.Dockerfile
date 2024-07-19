@@ -30,7 +30,7 @@ RUN set -eux; \
     npm config --global set cache=/home/${USER}/.npm; \
     mkdir /home/${USER}/.npm || true; \
     mkdir /app || true; \
-    chown -R ${CUSTOM_USER_ID}:${CUSTOM_USER_ID} /home/${USER}/.npm /app
+    chown -R ${USER_ID}:${USER_ID} /home/${USER}/.npm /app
 
 HEALTHCHECK CMD php -v
 
