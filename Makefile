@@ -14,6 +14,7 @@ $(IMAGES):
 		--build-arg "PHP_VERSION=$(PHP_VERSION)" \
 		--build-arg="FRANK_VERSION=$(FRANK_VERSION)" \
 		--build-arg="NODE_VERSION=$(NODE_VERSION)" \
+		--cache-from=dannypas00/$(@):latest
 	    --tag="dannypas00/$(@):latest"
 
 push: build
