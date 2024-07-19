@@ -19,7 +19,8 @@ RUN set -eux; install-php-extensions \
     gd \
     redis \
     xdebug \
-    memcached
+    memcached \
+    @composer
 
 RUN set-eux; apk add --update npm
 
