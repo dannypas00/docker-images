@@ -1,6 +1,6 @@
 PHP_VERSION ?= 8.3
 FRANK_VERSION ?= 1.2
-NODE_VERSION ?= 21.7.3
+NODE_VERSION ?= 20.15.1
 
 IMAGES ?= php-cli frank node
 

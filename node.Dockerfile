@@ -1,18 +1,16 @@
-FROM nodejs:21.7.3
+ARG NODE_VERSION=20.15.1
+
+FROM node:${NODE_VERSION}-alpine
 LABEL authors="dannypas00"
 
-ARG USER=app
-ARG USER_ID=1000
-
 # Create custom user
-RUN set -eux; useradd -u ${USER_ID} -m ${USER}; \
-    npm config --global set cache=/home/${USER}/.npm; \
-    mkdir /home/${USER}/.npm || true; \
+RUN npm config --global set cache=/home/node/.npm; \
+    mkdir /home/node/.npm || true; \
     mkdir /app || true; \
-    chown -R ${USER_ID}:${USER_ID} /home/${USER}/.npm /app
+    chown -R 1000:1000 /home/node/.npm /app
 
 HEALTHCHECK CMD node -v
 
-USER ${USER}
+USER node
 
 WORKDIR /app
