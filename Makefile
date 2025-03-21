@@ -7,7 +7,7 @@ build: $(IMAGES)
 $(IMAGES):
 	@echo Building $@/latest
 	docker build . --file=$(@).Dockerfile \
-		--build-arg "PHP_VERSION=$(PHP_VERSION)" \
+		--build-arg="PHP_VERSION=$(PHP_VERSION)" \
 		--build-arg="FRANK_VERSION=$(FRANK_VERSION)" \
 		--build-arg="NODE_VERSION=$(NODE_VERSION)";
 

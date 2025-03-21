@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.3
+ARG PHP_VERSION
 
 FROM php:${PHP_VERSION}-cli-alpine
 LABEL authors="dannypas00"

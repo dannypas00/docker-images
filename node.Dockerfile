@@ -1,4 +1,4 @@
-ARG NODE_VERSION=22.11.0
+ARG NODE_VERSION
 
 FROM node:${NODE_VERSION}-alpine
 LABEL authors="dannypas00"
