@@ -1,7 +1,3 @@
-PHP_VERSION ?= 8.4
-FRANK_VERSION ?= 1.4.4
-NODE_VERSION ?= 22.11.0
-
 IMAGES ?= php-cli frank node
 
 .DEFAULT_TARGET: push
@@ -13,10 +9,7 @@ $(IMAGES):
 	docker build . --file=$(@).Dockerfile \
 		--build-arg "PHP_VERSION=$(PHP_VERSION)" \
 		--build-arg="FRANK_VERSION=$(FRANK_VERSION)" \
-		--build-arg="NODE_VERSION=$(NODE_VERSION)" \
-		--cache-from=dannypas00/$(@):latest \
-	    --tag="dannypas00/$(@):latest" \
-	    --push;
+		--build-arg="NODE_VERSION=$(NODE_VERSION)";
 
 push: build
 	docker tag dannypas00/frank:latest dannypas00/frank:$(PHP_VERSION);
