@@ -34,7 +34,7 @@ jobs:
           context: .
           file: ./${{ matrix.dockerfile }}.Dockerfile
           push: true
-          tags: ${{ matrix.php }}
+          tags: dannypas00/${{ matrix.dockerfile }}:${{ matrix.php }}
           build-args: |
             PHP_VERSION=${{ matrix.php }}
             FRANK_VERSION=1.4.4
