@@ -7,7 +7,6 @@ build: $(IMAGES)
 $(IMAGES):
 	@echo Building $@/latest
 	docker build . --file=$(@).Dockerfile \
-		--parallel \
         --tag=dannypas00/$@:latest \
 		--cache-to type=gha \
 		--cache-from type=gha \
