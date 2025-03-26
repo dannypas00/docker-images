@@ -7,6 +7,7 @@ build: $(IMAGES)
 $(IMAGES):
 	@echo Building $@/latest
 	docker build . --file=$(@).Dockerfile \
+        --tag=dannypas00/$@:latest \
 		--cache-to type=gha \
 		--cache-from type=gha \
 		--build-arg="PHP_VERSION=$(PHP_VERSION)" \
