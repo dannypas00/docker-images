@@ -7,6 +7,8 @@ build: $(IMAGES)
 $(IMAGES):
 	@echo Building $@/latest
 	docker build . --file=$(@).Dockerfile \
+		--cache-to type=gha \
+		--cache-from type=gha \
 		--build-arg="PHP_VERSION=$(PHP_VERSION)" \
 		--build-arg="FRANK_VERSION=$(FRANK_VERSION)" \
 		--build-arg="NODE_VERSION=$(NODE_VERSION)";
