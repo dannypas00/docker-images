@@ -17,6 +17,7 @@ RUN set -eux; install-php-extensions \
     gmp \
     zip \
     pdo_mysql \
+    pdo_pgsql \
     sockets \
     gd \
     redis \
