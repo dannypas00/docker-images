@@ -14,7 +14,7 @@ jobs:
       matrix:
         php: [ 8.2, 8.3, 8.4 ]
         node: [ 22.11.0 ]
-        frank: [ 1.5.0 ]
+        frank: [ 1.9.1 ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
